@@ -1,0 +1,18 @@
+---
+# These tasks install http and the php modules.
+
+- name: Install http and php etc
+  apt: name={{ item }} update_cache=yes state=installed
+  with_items:
+   - apache2
+   - php5
+   - php5-mysql
+   - libapache2-mod-php5
+   - php5-mcrypt
+   - git
+
+- name: Allow access to WebServers
+  ufw: rule=allow port={{ httpd_port }}
+
+- name: http service state
+  service: name=apache2 state=started enabled=yes
