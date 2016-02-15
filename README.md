@@ -4,8 +4,7 @@ Building a simple LAMP stack and deploying Application using Ansible Playbooks.
 These playbooks require Ansible 1.2.
 
 These playbooks are meant to be a reference and starter's guide to building
-Ansible Playbooks. These playbooks were tested on CentOS 6.x so we recommend
-that you use CentOS or RHEL to test these modules.
+Ansible Playbooks. These playbooks were tested on Ubuntu Trusty (14.04).
 
 This LAMP stack can be on a single node or multiple nodes. The inventory file
 'hosts' defines the nodes in which the stacks should be configured.
