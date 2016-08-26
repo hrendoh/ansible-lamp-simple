@@ -17,7 +17,7 @@
 
 - name: Allow access to MySQL from WebServers
   ufw: rule=allow src="{{ hostvars[item]['ansible_default_ipv4']['address'] }}"
-  with_items: groups.webservers
+  with_items: "{{ groups.webservers }}"
 
 - name: Create Application Database
   mysql_db: name={{ dbname }} state=present
