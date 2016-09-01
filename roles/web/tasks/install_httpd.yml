@@ -1,14 +1,16 @@
 ---
 # These tasks install http and the php modules.
+- name: PHP | Add php-7.0 PPA
+  apt_repository: repo='ppa:ondrej/php' update_cache=yes state=present
 
 - name: Install http and php etc
   apt: name={{ item }} update_cache=yes state=installed
   with_items:
    - apache2
-   - php5
-   - php5-mysql
-   - libapache2-mod-php5
-   - php5-mcrypt
+   - php7.0
+   - php7.0-mysql
+   - libapache2-mod-php7.0
+   - php7.0-mcrypt
    - git
 
 - name: Allow access to WebServers
